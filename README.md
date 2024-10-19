@@ -175,3 +175,72 @@ erDiagram
     PRODUTO ||--o{ ITEM_PEDIDO : "está em"
     CATEGORIA ||--o{ PRODUTO : "contém"
 ```
+
+## Estrutura dos arquivos
+
+### Versão Web
+```
+web/
+│
+├── app/
+│   ├── Http/
+│   │   ├── Controllers/
+│   │   │   └── ProdutoController.php
+│   │   │   └── CategoriaController.php
+│   │   │   └── CarrinhoController.php
+│   │   │   └── PedidoController.php
+│   │   │   └── UsuarioController.php
+│   │
+│   ├── Models/
+│   │   └── Produto.php
+│   │   └── Categoria.php
+│   │   └── Carrinho.php
+│   │   └── Pedido.php
+│   │   └── ItemPedido.php
+│   │   └── Usuario.php
+│
+├── database/
+│   ├── migrations/
+│   └── seeders/
+│
+├── resources/
+│   ├── views/
+│   │   └── produtos/
+│   │   └── carrinho/
+│   │   └── pedidos/
+│
+├── routes/
+│   └── web.php
+│
+└── public/
+    └── css/
+    └── js/
+```
+
+
+### Versão Mobile
+```
+mobile/
+│
+├── src/
+│   ├── components/
+│   │   └── Produto.js
+│   │   └── Carrinho.js
+│   │   └── Pedido.js
+│   │   └── Categoria.js
+│   │
+│   ├── screens/
+│   │   └── HomeScreen.js
+│   │   └── ProdutoScreen.js
+│   │   └── CarrinhoScreen.js
+│   │   └── PedidoScreen.js
+│   │
+│   ├── navigation/
+│   │   └── AppNavigator.js
+│   │
+│   ├── services/
+│   │   └── api.js
+│   │   └── auth.js
+│
+└── App.js
+```
