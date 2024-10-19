@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100..700;1,100..700&display=swap');
+
+* {
+box-sizing: border-box;
+margin: 0;
+}
+ 
+body {
+font-family: 'Josefin Slab', serif;
+color: rgb(0, 0, 0);
+background: #fff;
+}
+.nav{
+display: flex;
+flex-direction: column;
+}
+
+.container1{
+display:flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+background-color: #617453;
+height: 13vh;
+padding: 30px 20px;
+}
+.logo{
+display: flex;
+flex-direction: row;
+width: 25vw;
+align-items: center;
+font-family: 'Josefin Slab', serif;
+margin-left: 15px;
+justify-content: space-between;
+}
+.img_logo{
+height: 13vh;
+}
+.logo h1 a{
+color:  #fff;;
+text-decoration: none;
+font-size: 35px;
+text-transform: uppercase;
+}
+.logo h1 a:hover{
+color:#394531;  
+}
+.container1 ul{
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-between;
+width: 40vw;
+margin-right: 15px;
+color: #fff;
+}
+.container1 ul a{
+color: #fff;
+text-decoration: none; 
+font-size: 14px; 
+text-transform: uppercase; 
+font-weight: bold;  
+}
+.container1 ul a:hover{
+color: #fff; 
+font-weight: bolder;
+text-decoration: underline;
+}
+.voltar{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px 20px;
+}
+.voltar a{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 20px;
+    text-decoration: none;
+}
+.voltar a:hover{
+text-decoration-line: underline;
+}
+.login{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 75vh;
+    align-items: center;
+    justify-content: center;
+}
+.card-login{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 400px;
+    height: fit-content;
+    padding: 20px;
+    color: #394531;
+    border-radius: 2px;
+    border: 2px solid #617453;
+}
+.card-login h1{
+    margin-bottom: 30px;
+    width: 100%;    
+    color: #617453;
+}
+.textfield{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 5px 0;
+}
+.textfield>input {
+    height: 20px;
+    padding: 15px;
+    color: #000;
+}
+.textfield>label {
+    font-weight: 600;
+
+}
+.esqueceu_a_senha{
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+.botao{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;    
+    margin: 10px 0;
+}
+.btn-login{
+    width: 100%;
+    background-color: #617453;
+    border: none;
+    color: #fff;
+    height: 30px;
+    cursor: pointer;
+}
+.btn-login:hover{
+    background-color: #394531;
+}
+.linha{
+    display: flex;
+    flex-direction: row;
+    color: #9a9a9a;
+    margin: 5px 0;
+}
+.btn-google{
+    width: 100%;
+    background-color: #313131;
+    border: none;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    height: 30px;
+    cursor: pointer;
+    align-items: center;
+}
+.btn-google img{
+    margin: 5px;
+}
+.btn-google:hover{
+    background-color: #000;
+}
+.cadastre, .esqueceu_a_senha{
+    color: #617453;
+
+}

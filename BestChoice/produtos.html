@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Best Choice</title>
+    <script src="coracao.js"></script>
+    <link rel="stylesheet" href="css/produtos.css">
+</head>
+
+<body>
+    <nav class="nav">
+        <div class="container1"> 
+            <div class="logo">
+                <img src="img/logo.PNG" class="img_logo">
+                <h1><a href="index.html">Best Choice</a></h1>
+            </div>
+            <ul>
+                <a href="sobreNos.html">Sobre Nós</a>
+                <a href="#">Entre em Contato</a>
+                <a href="#">Ajuda e Suporte </a>
+            </ul>
+        </div>
+        <div class="container2">
+            <div class="cont2-left">
+                <input type="text" class="busca" placeholder="Pesquisar...">
+                <button class="btnBusca"><span class="material-symbols-outlined">
+                        search
+                    </span></button>
+            </div>
+            <ul>
+                <button class="menu" onclick="document.location='login.html'"><span class="material-symbols-outlined">
+                        login
+                    </span> Login </button>
+                <button class="menu" onclick="document.location='cadastro.html'"><span
+                        class="material-symbols-outlined">
+                        person_add
+                    </span> Cadastre-se </button>
+                <button class="menu" onclick="document.location='favoritos.html'"><span
+                        class="material-symbols-outlined">
+                        favorite
+                    </span> Favoritos </button>
+                <button class="menu" onclick="document.location='carrinho.html'"><span
+                        class="material-symbols-outlined">
+                        shopping_cart
+                    </span> Carrinho </button>
+            </ul>
+        </div>
+        <div class="steps">
+            <a href="index.html">Home</a>
+            <span class="material-symbols-outlined">
+                chevron_right
+            </span>
+            <a href="categorias.html">Livraria</a>
+            <span class="material-symbols-outlined">
+                chevron_right
+            </span>
+            <a href="produtos.html">Literatura e Ficção</a>
+        </div>
+        <div class="topo">
+            <div class="top-left">
+                <h2>Literatura e Ficção</h2>
+                <p>30 resultados</p>
+            </div>
+            <div class="top-right">
+                <select name="order" id="order" class="order"> 
+                    <option value="" selected disabled>Ordenar por:</option>
+                    <option value="price-asc">Preço: Menor para Maior</option>
+                    <option value="price-desc">Preço: Maior para Menor</option>
+                    <option value="rating">Avaliação dos Clientes</option>
+                    <option value="newest">Mais Recentes</option>
+                </select>
+            </div>
+        </div>
+    </nav>
+    <main>
+
+        <aside>
+            <h2>Filtro</h2>
+
+            <div class="filter-group">
+                <h3>Editora</h3>
+                <label class="container">Galera
+                    <input type="checkbox" checked="checked">
+                    <span class="checkmark"></span>
+                  </label>
+                  
+                  <label class="container">Intrínseca
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  
+                  <label class="container"> Rocco
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  
+                  <label class="container">Paralela
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container">Cia das Letras
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container">Record
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container">Arqueiro
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+            </div>
+            <div class="filter-group">
+                <h3>Modelo</h3>
+                <label class="container">Capa Dura
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container">Capa Comum
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container">Audio Livro
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container">E-book
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+            </div>
+            <div class="filter-group">
+                <h3>Autor(a)</h3>
+                <label class="container">Rick Riordan
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container">Colleen Hoover
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container">JK. Rolling
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container">George Orwell
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container">Neil Gaiman
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container">Suzanne Collins
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container">Stephenie Meyer
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container">James Dasher
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+            </div>
+            <div class="filter-group">
+                <h3>Preço</h3>
+                <input type="range" min="10" max="150">
+                <div class="precoFiltro">
+                    <p>R$10</p>
+                    <p>R$150</p>
+                </div>
+            </div>
+        </aside>
+        <section class="products">
+            <div class="cardProduto" onclick="document.location='produtoLivro.html'">
+                <img src="img/1984.jpg" alt="Produto 2">
+                <div class="cardInfo">
+                    <div class="pInfos">
+
+                        <div class="pSobre">
+                            <h3>1984</h3>
+                            <p>Livros - Literatura - Ficção</p>
+                        </div>
+                        <span class="material-symbols-outlined favorite-icon" id="favoriteIcon">
+                            favorite
+                        </span>
+                    </div>
+                    <div class="pPreco">
+                        <p class="preco">$365 <span>$487</span> <span>-15%</span></p>
+                        <p class="avaliacao">★★★★★ (1231)</p>
+                    </div>
+                </div>
+            </div>
+            <div onclick="document.location='produtoLivro.html'" class="cardProduto">
+                <img src="img/alicenopaisdasmaravilhas.jpg" alt="Produto 2">
+                <div class="cardInfo">
+                    <div class="pInfos">
+
+                        <div class="pSobre">
+                            <h3>Alice no País das Maravilhas</h3>
+                            <p>Livros - Literatura - Ficção</p>
+                        </div>
+                        <span class="material-symbols-outlined favorite-icon" id="favoriteIcon">
+                            favorite
+                        </span>
+                    </div>
+                    <div class="pPreco">
+                        <p class="preco">$365 <span>$487</span> <span>-15%</span></p>
+                        <p class="avaliacao">★★★★★ (1231)</p>
+                    </div>
+                </div>
+            </div>
+            <div onclick="document.location='produtoLivro.html'" class="cardProduto">
+                <img src="img/bibliotecameianoite.jpg" alt="Produto 2">
+                <div class="cardInfo">
+                    <div class="pInfos">
+
+                        <div class="pSobre">
+                            <h3>Biblioteca da Meia-Noite</h3>
+                            <p>Livros - Literatura - Ficção</p>
+                        </div>
+                        <span class="material-symbols-outlined favorite-icon" id="favoriteIcon">
+                            favorite
+                        </span>
+                    </div>
+                    <div class="pPreco">
+                        <p class="preco">$365 <span>$487</span> <span>-15%</span></p>
+                        <p class="avaliacao">★★★★★ (1231)</p>
+                    </div>
+                </div>
+            </div>
+            <div onclick="document.location='produtoLivro.html'" class="cardProduto">
+                <img src="img/coraline.jpg" alt="Produto 2">
+                <div class="cardInfo">
+                    <div class="pInfos">
+
+                        <div class="pSobre">
+                            <h3>Coraline</h3>
+                            <p>Livros - Literatura - Ficção</p>
+                        </div>
+                        <span class="material-symbols-outlined favorite-icon" id="favoriteIcon">
+                            favorite
+                        </span>
+                    </div>
+                    <div class="pPreco">
+                        <p class="preco">$365 <span>$487</span> <span>-15%</span></p>
+                        <p class="avaliacao">★★★★★ (1231)</p>
+                    </div>
+                </div>
+            </div>
+            <div onclick="document.location='produtoLivro.html'" class="cardProduto">
+                <img src="img/duna.jpg" alt="Produto 2">
+                <div class="cardInfo">
+                    <div class="pInfos">
+
+                        <div class="pSobre">
+                            <h3>Duna - Livro 1</h3>
+                            <p>Livros - Literatura - Ficção</p>
+                        </div>
+                        <span class="material-symbols-outlined favorite-icon" id="favoriteIcon">
+                            favorite
+                        </span>
+                    </div>
+                    <div class="pPreco">
+                        <p class="preco">$365 <span>$487</span> <span>-15%</span></p>
+                        <p class="avaliacao">★★★★★ (1231)</p>
+                    </div>
+                </div>
+            </div>
+            <div onclick="document.location='produtoLivro.html'" class="cardProduto">
+                <img src="img/genteansiosa.jpg" alt="Produto 2">
+                <div class="cardInfo">
+                    <div class="pInfos">
+
+                        <div class="pSobre">
+                            <h3>Gente Ansiosa</h3>
+                            <p>Livros - Literatura - Ficção</p>
+                        </div>
+                        <span class="material-symbols-outlined favorite-icon" id="favoriteIcon">
+                            favorite
+                        </span>
+                    </div>
+                    <div class="pPreco">
+                        <p class="preco">$365 <span>$487</span> <span>-15%</span></p>
+                        <p class="avaliacao">★★★★★ (1231)</p>
+                    </div>
+                </div>
+            </div>
+            <div onclick="document.location='produtoLivro.html'" class="cardProduto">
+                <img src="img/passaroseserpentes.jpg" alt="Produto 2">
+                <div class="cardInfo">
+                    <div class="pInfos">
+
+                        <div class="pSobre">
+                            <h3>A Cantiga de Passaros e Serpentes</h3>
+                            <p>Livros - Literatura - Ficção</p>
+                        </div>
+                        <span class="material-symbols-outlined favorite-icon" id="favoriteIcon">
+                            favorite
+                        </span>
+                    </div>
+                    <div class="pPreco">
+                        <p class="preco">$365 <span>$487</span> <span>-15%</span></p>
+                        <p class="avaliacao">★★★★★ (1231)</p>
+                    </div>
+                </div>
+            </div>
+            <div onclick="document.location='produtoLivro.html'" class="cardProduto">
+                <img src="img/rainhavermelha.jpg" alt="Produto 2">
+                <div class="cardInfo">
+                    <div class="pInfos">
+
+                        <div class="pSobre">
+                            <h3>A Rainha Vermelha</h3>
+                            <p>Livros - Literatura - Ficção</p>
+                        </div>
+                        <span class="material-symbols-outlined favorite-icon" id="favoriteIcon">
+                            favorite
+                        </span>
+                    </div>
+                    <div class="pPreco">
+                        <p class="preco">$365 <span>$487</span> <span>-15%</span></p>
+                        <p class="avaliacao">★★★★★ (1231)</p>
+                    </div>
+                </div>
+            </div>
+            <div onclick="document.location='produtoLivro.html'" class="cardProduto">
+                <img src="img/caraval.jpg" alt="Produto 2">
+                <div class="cardInfo">
+                    <div class="pInfos">
+
+                        <div class="pSobre">
+                            <h3>Trilogia Caraval - Livro 1</h3>
+                            <p>Livros - Literatura - Ficção</p>
+                        </div>
+                        <span class="material-symbols-outlined favorite-icon" id="favoriteIcon">
+                            favorite
+                        </span>
+                    </div>
+                    <div class="pPreco">
+                        <p class="preco">$365 <span>$487</span> <span>-15%</span></p>
+                        <p class="avaliacao">★★★★★ (1231)</p>
+                    </div>
+                </div>
+            </div>
+            <div onclick="document.location='produtoLivro.html'" class="cardProduto">
+                <img src="img/livro.png" alt="Produto 2">
+                <div class="cardInfo">
+                    <div class="pInfos">
+
+                        <div class="pSobre">
+                            <h3>Box de Livros - Maze Runner</h3>
+                            <p>Livros - Literatura - Ficção</p>
+                        </div>
+                        <span class="material-symbols-outlined favorite-icon" id="favoriteIcon">
+                            favorite
+                        </span>
+                    </div>
+                    <div class="pPreco">
+                        <p class="preco">$365 <span>$487</span> <span>-15%</span></p>
+                        <p class="avaliacao">★★★★★ (1231)</p>
+                    </div>
+                </div>
+            </div>
+            <div onclick="document.location='produtoLivro.html'" class="cardProduto">
+                <img src="img/percyjackson.jpg" alt="Produto 2">
+                <div class="cardInfo">
+                    <div class="pInfos">
+
+                        <div class="pSobre">
+                            <h3>Percy Jackson e a Batalha no Labirinto</h3>
+                            <p>Livros - Literatura - Ficção</p>
+                        </div>
+                        <span class="material-symbols-outlined favorite-icon" id="favoriteIcon">
+                            favorite
+                        </span>
+                    </div>
+                    <div class="pPreco">
+                        <p class="preco">$365 <span>$487</span> <span>-15%</span></p>
+                        <p class="avaliacao">★★★★★ (1231)</p>
+                    </div>
+                </div>
+            </div>
+            <div onclick="document.location='produtoLivro.html'" class="cardProduto">
+                <img src="img/todasassuasimperfeicoes.jpg" alt="Produto 2">
+                <div class="cardInfo">
+                    <div class="pInfos">
+
+                        <div class="pSobre">
+                            <h3>Todas as Suas Imperfeições</h3>
+                            <p>Livros - Literatura - Ficção</p>
+                        </div>
+                        <span class="material-symbols-outlined favorite-icon">
+                            favorite
+                        </span>
+                    </div>
+                    <div class="pPreco">
+                        <p class="preco">$365 <span>$487</span> <span>-15%</span></p>
+                        <p class="avaliacao">★★★★★ (1231)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="pagination">
+                <a href="#" class="prev">&laquo;</a>
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <span>...</span>
+                <a href="#">5</a>
+                <a href="#" class="next">&raquo;</a>
+              </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Empresa</h3>
+                <a href="sobreNos.html">Sobre nós</a>
+                <a href="#">Nossa Loja</a>
+                <a href="#">Entre em contato</a>
+            </div>
+            <div class="footer-column">
+                <h3>Oportunidades</h3>
+                <a href="#">Programa de Vendas</a>
+                <a href="#">Anúncios</a>
+                <a href="#">Cooperação</a>
+            </div>
+            <div class="footer-column">
+                <h3>Como comprar</h3>
+                <a href="#">Fazendo o pagamento</a>
+                <a href="#">Opções de Entrega</a>
+                <a href="#">Proteção de Compra</a>
+                <a href="#">Guia do Usuário</a>
+            </div>
+            <div class="footer-column">
+                <h3>Ajuda</h3>
+                <a href="#">Entre em contato</a>
+                <a href="#">FAQ</a>
+                <a href="#">Política de Privacidade</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer1">
+                <div class="pagamentos">
+                    <img src="img/visa.png" alt="visa">
+                    <img src="img/master.png" alt="master">
+                    <img src="img/paypal.png" alt="paypal">
+                </div>
+
+            </div>
+            <hr size="1" width="95%">
+            <div class="footer2">
+                <p>Fatec - Sorocaba, São Paulo-Brasil</p>
+                <p>©2024 Todos os direitos reservados BestChoice Store</p>
+
+                <div class="social-icons">
+                    <a href="#"><img src="img/facebook.png" alt="Facebook"></a>
+                    <a href="#"><img src="img/instagram.png" alt="Instagram"></a>
+                    <a href="#"><img src="img/telegram.png" alt="telegram"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

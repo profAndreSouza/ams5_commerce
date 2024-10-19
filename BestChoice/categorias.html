@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/categorias.css" />
+    <script src="quantidade.js"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Categorias</title>
+</head>
+
+<body>
+    <nav class="nav">
+        <div class="container1">
+            <div class="logo">
+                <img src="img/logo.PNG" class="img_logo">
+                <h1><a href="index.html">Best Choice</a></h1>
+            </div>
+            <ul>
+                <a href="sobreNos.html">Sobre Nós</a>
+                <a href="#">Entre em Contato</a>
+                <a href="#">Ajuda e Suporte </a>
+            </ul>
+        </div>
+        <div class="container2">
+            <div class="cont2-left">
+                <input type="text" class="busca" placeholder="Pesquisar...">
+                <button class="btnBusca"><span class="material-symbols-outlined">
+                        search
+                    </span></button>
+            </div>
+            <ul>
+                <button class="menu" onclick="document.location='login.html'"><span class="material-symbols-outlined">
+                        login
+                    </span> Login </button>
+                <button class="menu" onclick="document.location='cadastro.html'"><span
+                        class="material-symbols-outlined">
+                        person_add
+                    </span> Cadastre-se </button>
+                <button class="menu" onclick="document.location='favoritos.html'"><span
+                        class="material-symbols-outlined">
+                        favorite
+                    </span> Favoritos </button>
+                <button class="menu" onclick="document.location='carrinho.html'"><span
+                        class="material-symbols-outlined">
+                        shopping_cart
+                    </span> Carrinho </button>
+            </ul>
+        </div>
+    </nav>
+    <main>
+
+        <h1>Veja Nossas Categorias</h1>
+        <section class="produtos">
+            <div class="linha">
+              <h2>Livros</h2>
+              <a href="produtos.html">Ver Tudo <span class="material-symbols-outlined">
+                  arrow_forward_ios
+                </span></a>
+            </div>
+      
+            <div class="cardsProdutos">
+              <div onclick="document.location='produtoLivro.html'" class="cardProduto">
+                <img src="img/alicenopaisdasmaravilhas.jpg" alt="Produto 2">
+                <div class="cardInfo">
+                  <div class="pInfos">
+      
+                    <div class="pSobre">
+                      <h3>Alice no país das Maravilhas</h3>
+                      <p>Livraria - Ficção e Aventura</p>
+                    </div>
+                    <span class="material-symbols-outlined favorite-icon" id="favoriteIcon">
+                            favorite
+                        </span>
+                  </div>
+                  <div class="pPreco">
+                    <p class="preco">$228 <span>$290</span> <span class="desconto">-10%</span></p>
+                    <p class="avaliacao">★★★★★ (299)</p>
+                  </div>
+                </div>
+              </div>
+              <div onclick="document.location='produtoLivro.html'" class="cardProduto">
+                <img src="img/bibliotecameianoite.jpg" alt="Produto 2">
+                <div class="cardInfo">
+                  <div class="pInfos">
+      
+                    <div class="pSobre">
+                      <h3>Biblioteca da Meia-Noite</h3>
+                      <p>Livraria - Ficção e Aventura</p>
+                    </div>
+                    <span class="material-symbols-outlined favorite-icon" id="favoriteIcon">
+                        favorite
+                    </span>
+                  </div>
+                  <div class="pPreco">
+                    <p class="preco">$95 <span>$145</span> <span>-7%</span></p>
+                    <p class="avaliacao">★★★★★ (1521)</p>
+                  </div>
+                </div>
+              </div>
+              <div onclick="document.location='produtoLivro.html'" class="cardProduto">
+                <img src="img/1984.jpg" alt="Produto 2">
+                <div class="cardInfo">
+                  <div class="pInfos">
+      
+                    <div class="pSobre">
+                      <h3>1984</h3>
+                      <p>Livraria - Ficção e Aventura</p>
+                    </div>
+                    <span class="material-symbols-outlined favorite-icon" id="favoriteIcon">
+                        favorite
+                    </span>
+                  </div>
+                  <div class="pPreco">
+                    <p class="preco">$125 <span>$156</span> <span>-6%</span></p>
+                    <p class="avaliacao">★★★★★ (860)</p>
+                  </div>
+                </div>
+              </div>
+              <div onclick="document.location='produtoLivro.html'" class="cardProduto">
+                <img src="img/livro.png" alt="Produto 2">
+                <div class="cardInfo">
+                  <div class="pInfos">
+      
+                    <div class="pSobre">
+                      <h3>Box de Livros - Maze Runner</h3>
+                      <p>Livros - Box - Ficção</p>
+                    </div>
+                    <span class="material-symbols-outlined favorite-icon" id="favoriteIcon">
+                        favorite
+                    </span>
+                  </div>
+                  <div class="pPreco">
+                    <p class="preco">$365 <span>$487</span> <span>-15%</span></p>
+                    <p class="avaliacao">★★★★★ (1231)</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="produtos">
+            <div class="linha">
+              <h2>Eletrônicos</h2>
+              <a href="produtos.html">Ver Tudo <span class="material-symbols-outlined">
+                  arrow_forward_ios
+                </span></a>
+            </div>
+      
+            <div class="cardsProdutos">
+              <div onclick="document.location='produtoEletronico.html'" class="cardProduto">
+                <img src="img/alexa.png" alt="Produto 2">
+                <div class="cardInfo">
+                  <div class="pInfos">
+      
+                    <div class="pSobre">
+                      <h3>Alexa</h3>
+                      <p>Eletrônico - Echo e Alexa</p>
+                    </div>
+                    <span class="material-symbols-outlined favorite-icon" id="favoriteIcon">
+                        favorite
+                    </span>
+                  </div>
+                  <div class="pPreco">
+                    <p class="preco">$228 <span>$290</span> <span class="desconto">-10%</span></p>
+                    <p class="avaliacao">★★★★★ (299)</p>
+                  </div>
+                </div>
+              </div>
+              <div onclick="document.location='produtoEletronico.html'" class="cardProduto">
+                <img src="img/echo3.jpg" alt="Produto 2">
+                <div class="cardInfo">
+                  <div class="pInfos">
+      
+                    <div class="pSobre">
+                      <h3>Echo Show 5 </h3>
+                      <p>Eletrônico - Echo e Alexa</p>
+                    </div>
+                    <span class="material-symbols-outlined favorite-icon" id="favoriteIcon">
+                        favorite
+                    </span>
+                  </div>
+                  <div class="pPreco">
+                    <p class="preco">$95 <span>$145</span> <span>-7%</span></p>
+                    <p class="avaliacao">★★★★★ (1521)</p>
+                  </div>
+                </div>
+              </div>
+              <div onclick="document.location='produtoEletronico.html'" class="cardProduto">
+                <img src="img/iphone.jpg" alt="Produto 2">
+                <div class="cardInfo">
+                  <div class="pInfos">
+      
+                    <div class="pSobre">
+                      <h3>Iphone 15</h3>
+                      <p>Eletrônico - Celular</p>
+                    </div>
+                    <span class="material-symbols-outlined favorite-icon" id="favoriteIcon">
+                        favorite
+                    </span>
+                  </div>
+                  <div class="pPreco">
+                    <p class="preco">$125 <span>$156</span> <span>-6%</span></p>
+                    <p class="avaliacao">★★★★★ (860)</p>
+                  </div>
+                </div>
+              </div>
+              <div onclick="document.location='produtoEletronico.html'" class="cardProduto">
+                <img src="img/carregador.jpg" alt="Produto 2">
+                <div class="cardInfo">
+                  <div class="pInfos">
+      
+                    <div class="pSobre">
+                      <h3>Carregador</h3>
+                      <p>Eletrônico - Acessórios</p>
+                    </div>
+                    <span class="material-symbols-outlined favorite-icon" id="favoriteIcon">
+                        favorite
+                    </span>
+                  </div>
+                  <div class="pPreco">
+                    <p class="preco">$365 <span>$487</span> <span>-15%</span></p>
+                    <p class="avaliacao">★★★★★ (1231)</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="produtos">
+            <div class="linha">
+              <h2>Roupas</h2>
+              <a href="produtos.html">Ver Tudo <span class="material-symbols-outlined">
+                  arrow_forward_ios
+                </span></a>
+            </div>
+      
+            <div class="cardsProdutos">
+              <div onclick="document.location='produtoRoupa.html'" class="cardProduto">
+                <img src="img/product-1.jpg" alt="Produto 2">
+                <div class="cardInfo">
+                  <div class="pInfos">
+      
+                    <div class="pSobre">
+                      <h3>Vestido</h3>
+                      <p>Roupa - Feminina</p>
+                    </div>
+                    <span class="material-symbols-outlined favorite-icon" id="favoriteIcon">
+                        favorite
+                    </span>
+                  </div>
+                  <div class="pPreco">
+                    <p class="preco">$228 <span>$290</span> <span class="desconto">-10%</span></p>
+                    <p class="avaliacao">★★★★★ (299)</p>
+                  </div>
+                </div>
+              </div>
+              <div onclick="document.location='produtoRoupa.html'" class="cardProduto">
+                <img src="img/product-3.jpg" alt="Produto 2">
+                <div class="cardInfo">
+                  <div class="pInfos">
+      
+                    <div class="pSobre">
+                      <h3>Vestido</h3>
+                      <p>Roupa - Feminina</p>
+                    </div>
+                    <span class="material-symbols-outlined favorite-icon" id="favoriteIcon">
+                        favorite
+                    </span>
+                  </div>
+                  <div class="pPreco">
+                    <p class="preco">$95 <span>$145</span> <span>-7%</span></p>
+                    <p class="avaliacao">★★★★★ (1521)</p>
+                  </div>
+                </div>
+              </div>
+              <div onclick="document.location='produtoRoupa.html'" class="cardProduto">
+                <img src="img/product-5.jpg" alt="Produto 2">
+                <div class="cardInfo">
+                  <div class="pInfos">
+      
+                    <div class="pSobre">
+                      <h3>Vestido</h3>
+                      <p>Roupa - Feminina</p>
+                    </div>
+                    <span class="material-symbols-outlined favorite-icon" id="favoriteIcon">
+                        favorite
+                    </span>
+                  </div>
+                  <div class="pPreco">
+                    <p class="preco">$125 <span>$156</span> <span>-6%</span></p>
+                    <p class="avaliacao">★★★★★ (860)</p>
+                  </div>
+                </div>
+              </div>
+              <div onclick="document.location='produtoRoupa.html'" class="cardProduto">
+                <img src="img/product-6.jpg" alt="Produto 2">
+                <div class="cardInfo">
+                  <div class="pInfos">
+      
+                    <div class="pSobre">
+                      <h3>Vestido</h3>
+                      <p>Roupa - Feminina</p>
+                    </div>
+                    <span class="material-symbols-outlined favorite-icon" id="favoriteIcon">
+                        favorite
+                    </span>
+                  </div>
+                  <div class="pPreco">
+                    <p class="preco">$365 <span>$487</span> <span>-15%</span></p>
+                    <p class="avaliacao">★★★★★ (1231)</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Empresa</h3>
+                <a href="sobreNos.html">Sobre nós</a>
+                <a href="#">Nossa Loja</a>
+                <a href="#">Entre em contato</a>
+            </div>
+            <div class="footer-column">
+                <h3>Oportunidades</h3>
+                <a href="#">Programa de Vendas</a>
+                <a href="#">Anúncios</a>
+                <a href="#">Cooperação</a>
+            </div>
+            <div class="footer-column">
+                <h3>Como comprar</h3>
+                <a href="#">Fazendo o pagamento</a>
+                <a href="#">Opções de Entrega</a>
+                <a href="#">Proteção de Compra</a>
+                <a href="#">Guia do Usuário</a>
+            </div>
+            <div class="footer-column">
+                <h3>Ajuda</h3>
+                <a href="#">Entre em contato</a>
+                <a href="#">FAQ</a>
+                <a href="#">Política de Privacidade</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer1">
+                <div class="pagamentos">
+                    <img src="img/visa.png" alt="visa">
+                    <img src="img/master.png" alt="master">
+                    <img src="img/paypal.png" alt="paypal">
+                </div>
+
+            </div>
+            <hr size="1" width="95%">
+            <div class="footer2">
+                <p>Fatec - Sorocaba, São Paulo-Brasil</p>
+                <p>©2024 Todos os direitos reservados BestChoice Store</p>
+
+                <div class="social-icons">
+                    <a href="#"><img src="img/facebook.png" alt="Facebook"></a>
+                    <a href="#"><img src="img/instagram.png" alt="Instagram"></a>
+                    <a href="#"><img src="img/telegram.png" alt="telegram"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="coracao.js"></script>
+</body>
+
+</html>
