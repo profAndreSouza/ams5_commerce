@@ -1,0 +1,469 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100..700;1,100..700&display=swap');
+
+* {
+box-sizing: border-box;
+margin: 0;
+}
+ 
+body {
+font-family: 'Josefin Slab', serif;
+color: rgb(0, 0, 0);
+background: #fff;
+}
+.nav{
+display: flex;
+flex-direction: column;
+}
+
+.container1{
+display:flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+height: 10vh;
+padding: 10px 20px;
+}
+.logo{
+display: flex;
+flex-direction: row;
+width: 25vw;
+align-items: center;
+font-family: 'Josefin Slab', serif;
+margin-left: 15px;
+justify-content: space-between;
+}
+.img_logo{
+width: 78px;
+height: 78px;
+}
+.logo h1 a{
+color:#617453;
+text-decoration: none;
+font-size: 35px;
+text-transform: uppercase;
+}
+.logo h1 a:hover{
+color:#394531;  
+}
+.container1 ul{
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-between;
+width: 40vw;
+margin-right: 15px;
+color: #000;
+}
+.container1 ul a{
+color: #617453;
+text-decoration: none; 
+font-size: 14px; 
+text-transform: uppercase; 
+font-weight: bold;  
+}
+.container1 ul a:hover{
+color: #394531; 
+font-weight: bolder;
+text-decoration: underline;
+}
+.container2{
+background-color: #617453;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+height: 10vh;
+padding: 10px 20px;
+
+}
+.cont2-left {
+display: flex;
+align-items: center;
+background-color: #fff;
+border: 1px solid #ccc;
+height: 50px;
+border-radius: 50px;
+padding-right: 3px;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.busca {
+border: none;
+padding: 10px;
+font-size: 16px;
+outline: none;
+border-radius: 50px;
+width: 300px;
+}
+
+.btnBusca {
+border: none;
+background-color: #617453;
+color: white;
+font-size: 16px;
+cursor: pointer;
+border-radius:100%;
+height: 45px;
+width: 45px;
+text-align-last: center;
+transition: background-color 0.3s;
+}
+
+.btnBusca:hover {
+background-color: #394531;
+}
+.container2 ul{
+display: flex;
+flex-direction: row;
+}
+.menu{
+display: flex;
+flex-direction: row;
+background-color: #617453;
+margin-right: 10px;
+border: none;
+outline: none;
+cursor: pointer;
+color: #fff;
+height: 50px;
+width: fit-content;
+text-transform: uppercase;
+text-align-last: center;    
+align-items: center;
+justify-content: space-between;
+padding: 0 8px;
+}
+.menu:hover{
+color: #c0d3b2;
+}
+
+
+
+
+main{
+display: flex;
+padding: 20px;
+}
+.principal{
+display: flex;
+flex-direction: column;
+padding: 20px 100px;
+}
+.principal h2{
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+.carrinho{
+display: flex;
+flex-direction: row;
+width: 80vw;
+justify-content: space-between;
+
+}
+
+.carrinho-left{
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+}
+.item{
+display: flex;
+flex-direction: row;
+align-items: center;
+margin-bottom: 20px;
+justify-content: space-between;
+width: 100%;
+padding-right: 20px;
+}
+.item img{
+width: 90px;
+height: 90px;
+margin-right: 20px;
+}
+.detalhes{
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+width: 40%;
+}
+.quantity-selection {
+    margin: 40px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.quantity-btn{
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 1px;
+    width: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.quantity-btn button{
+    font-size: 18px;
+    padding: 5px 10px;
+    border: none;
+    background-color: #fff;
+    color: #999;
+    cursor: pointer;
+    border-radius: 1px;
+}
+.quantity-selection input {
+    width: 30px;
+    text-align: center;
+    border: none;
+}
+.remove-item{
+background: none;
+border: none;
+cursor: pointer;
+}
+.remove-item:hover{
+    transform: scale(1.02);
+    background-color: rgb(196, 196, 196);
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+}
+.remove-item .material-symbols-outlined:hover{
+    transform: scale(1.03);
+    
+}
+
+.carrinho-right{
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+    align-items: flex-end;
+}
+.resumo {
+background-color: #e7efdc;
+padding: 20px;
+margin-top: 20px;
+display: flex;
+flex-direction: column;
+padding: 30px;
+border-radius: 20px;
+width: 80%;
+}
+.linha{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin: 10px 0;
+}
+.linha-total{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin: 20px 0;
+    font-weight: 900;
+}
+.linha .material-symbols-outlined, .discount-msg {
+color: red;
+}
+
+.finalize-btn {
+    background-color: #617453;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+.finalize-btn:hover{
+background-color: #394531;
+}
+.sugestoes {
+    margin-top: 40px;
+}
+.itens{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.suggested-item {
+    display: flex;
+    flex-direction: row;
+    width: 320px;
+    height: 120px;
+    text-align: center;
+    margin-right: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+.informacoes{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 100%;
+}
+.informacoes h4{
+    font-size: 20px;
+    cursor: pointer;
+}
+.informacoes h4:hover{
+    text-decoration: underline;
+}
+.preco{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.suggested-item img {
+    width: 120px;
+    height: 120px;
+    margin-right: 10px;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: red;
+}
+
+.new-price {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.discount {
+    color: green;
+}
+.add-carrinho{
+    background-color: #fff;
+    border: 2px solid #617453;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.add-carrinho:hover{
+    transform: scale(1.07);
+}
+.areaDesconto {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #617453;
+    height: 40px;
+    width: 80%;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .cupomDesconto {
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    outline: none;
+    border-radius: 5px;
+    width: 300px;
+    }
+    
+    .btnDesconto {
+    border: none;
+    background-color: #617453;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius:5px;
+    height: 40px;
+    width: 120px;
+    text-align-last: center;
+    transition: background-color 0.3s;
+    }
+    
+    .btnDesconto:hover {
+    background-color: #394531;
+    }
+
+
+footer {
+    color: white;
+    padding: 20px 0;
+}
+    
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    background-color: #abc997;
+    padding: 50px 200px 20px 200px;
+    height: 300px;
+    align-items: flex-start;
+}
+.footer-column{
+    height: 120px;
+}
+.footer-column h3 {
+    margin-bottom: 10px;
+    color: #394531;
+    font-weight: bolder;
+    }
+    
+    .footer-column a {
+    color: #394531;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    margin-top: 20px;
+    }
+    .footer-column a:hover{
+    text-decoration: underline;
+    }
+    .footer-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    }
+    .footer1{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100vw;
+    padding: 20px 40px;
+    }
+    .pagamentos img{
+    margin-right: 40px;
+    }
+    .footer2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100vw;
+    padding: 10px 40px;
+    align-items: center;
+    }
+    .footer2 p {
+    margin: 0;
+    color: #394531;
+    }
+    .social-icons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    }
+    .social-icons img {
+    width: 30px;
+    margin-left: 20px;
+    }
