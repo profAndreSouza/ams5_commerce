@@ -16,6 +16,10 @@ class CategoryController extends Controller
     {
         $categories = Category::with('children')->whereNull('parent_id')->get();
         return $categories;
+        $categories = Category::with('parent')->get();
+        // $categories = Category::all();
+        // return($categories);
+        return view('category.index', compact('categories'));
     }
 
     /**
@@ -42,9 +46,12 @@ class CategoryController extends Controller
             'parent_id' => 'nullable|exists:categories,id'
         ]);
 
-        Category::create($request->all());
+        Category::create([
+            'name' => $request->name,
+            'parent_id' => $request->parent_id
+        ]);
 
-        return redirect()->route('category.index');
+        return redirect()->route('categories.index');
     }
 
     /**
@@ -66,7 +73,10 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $category = Category::findOrFail($id);
+        $categories = Category::where('id', '!=', $id)->get();
+
+        return view('category.edit', compact('category', 'categories'));
     }
 
     /**
@@ -78,7 +88,19 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $category = Category::findOrFail($id);
+
+        $request->validate([
+            'name' => 'required',
+            'parent_id' => 'nullable|exists:categories,id'
+        ]);
+
+        $category->update([
+            'name' => $request->name,
+            'parent_id' => $request->parent_id
+        ]);
+
+        return redirect()->route('categories.index');
     }
 
     /**
@@ -89,6 +111,9 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category = Category::findOrFail($id);
+        $category->delete();
+
+        return redirect()->route('categories.index');
     }
 }
