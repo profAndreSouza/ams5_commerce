@@ -12,6 +12,9 @@
 
     <label for="name">Nome</label>
     <input type="text" name="name" id="name"> <br />
+    
+    <label for="name">Slug</label>
+    <input type="text" name="slug" id="slug"> <br />
 
     <label for="name">Categoria pai</label>
     <select name="parent_id" id="parent_id">

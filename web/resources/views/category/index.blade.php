@@ -13,6 +13,7 @@
     <thead>
         <tr>
             <td>Categoria</td>
+            <td>Slug</td>
             <td>Categoria Pai</td>
             <td coslpan="2">Ações</td>
         </tr>
@@ -21,6 +22,7 @@
         @foreach ($categories as $category)
         <tr>
             <td>{{ $category->name }}</td>
+            <td>{{ $category->slug }}</td>
             <td>{{ $category->parent ? $category->parent->name : '' }}</td>
             <td><a href="{{ route('categories.edit', $category->id) }}">Editar</a></td>
             <td>

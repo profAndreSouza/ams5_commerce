@@ -3,17 +3,30 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Category;
 
 class HomeController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function index()
     {
-        return view('home.index');
+        
+        $categories = Category::with('children')->whereNull('parent_id')->get();
+        $categories->map(function ($category) {
+            return $this->childrenCategories($category);
+        });
+        return view('home.index', compact('categories'));
+    }
+
+    // Função para retornar os "filhos" recursivamente
+    private function childrenCategories($category) {
+        return array_merge (
+            $category->toArray(), [
+                'children' => $category->children->map(function ($child) {
+                    return $this->childrenCategories($child);
+                })
+            ]
+            );
     }
 
     /**

@@ -10,209 +10,21 @@
 
     <div class="container3">
       <ul>
+      @foreach ($categories as $category)
         <li class="category">
-          <a href="#">Roupa</a>
+          <a href="{{ route('product.category', $category->slug) }}">{{ $category->name }}</a>
           <div class="subcategories">
+          @foreach ($category->children as $subCategory)
             <div class="column">
-              <h4>Feminino</h4>
-              <a href="#">Vestidos</a>
-              <a href="#">Camisetas</a>
-              <a href="#">Calças</a>
+              <h4>{{ $subCategory->name }}</h4>
+            @foreach ($subCategory->children as $subCategoryLvl2)
+              <a href="{{ route('product.category', $subCategoryLvl2->slug) }}">{{ $subCategoryLvl2->name }}</a>
+            @endforeach
             </div>
-            <div class="column">
-              <h4>Masculino</h4>
-              <a href="#">Camisetas</a>
-              <a href="#">Calças</a>
-              <a href="#">Shorts</a>
-            </div>
-            <div class="column">
-              <h4>Infantil</h4>
-              <a href="#">Camisetas</a>
-              <a href="#">Calças</a>
-              <a href="#">Inverno</a>
-            </div>
+          @endforeach
           </div>
         </li>
-        <li class="category">
-          <a href="#">Eletrônico</a>
-          <div class="subcategories">
-            <div class="column">
-              <h4>Celulares</h4>
-              <a href="#">Smartphones</a>
-              <a href="#">Acessórios</a>
-            </div>
-            <div class="column">
-              <h4>Computadores</h4>
-              <a href="#">Laptops</a>
-              <a href="#">Desktops</a>
-            </div>
-            <div class="column">
-              <h4>Acessórios</h4>
-              <a href="#">Fones de ouvido</a>
-              <a href="#">Carregadores</a>
-            </div>
-          </div>
-        </li>
-        <li class="category">
-          <a href="#">Esportes</a>
-          <div class="subcategories">
-            <div class="column">
-              <h4>Equipamentos</h4>
-              <a href="#">Bolas</a>
-              <a href="#">Raquetes</a>
-            </div>
-            <div class="column">
-              <h4>Roupas</h4>
-              <a href="#">Camisetas</a>
-              <a href="#">Shorts</a>
-            </div>
-            <div class="column">
-              <h4>Calçados</h4>
-              <a href="#">Tênis</a>
-              <a href="#">Chuteiras</a>
-            </div>
-          </div>
-        </li>
-        <li class="category">
-          <a href="#">Beleza</a>
-          <div class="subcategories">
-            <div class="column">
-              <h4>Maquiagem</h4>
-              <a href="#">Batons</a>
-              <a href="#">Sombras</a>
-            </div>
-            <div class="column">
-              <h4>Cabelos</h4>
-              <a href="#">Shampoos</a>
-              <a href="#">Condicionadores</a>
-            </div>
-            <div class="column">
-              <h4>Pele</h4>
-              <a href="#">Cremes</a>
-              <a href="#">Protetores Solares</a>
-            </div>
-          </div>
-        </li>
-        <li class="category">
-          <a href="#">Brinquedos</a>
-          <div class="subcategories">
-            <div class="column">
-              <h4>Idade</h4>
-              <a href="#">0-2 anos</a>
-              <a href="#">3-5 anos</a>
-            </div>
-            <div class="column">
-              <h4>Tipo</h4>
-              <a href="#">Educativos</a>
-              <a href="#">Peluche</a>
-            </div>
-            <div class="column">
-              <h4>Outros</h4>
-              <a href="#">Jogos</a>
-              <a href="#">Puzzles</a>
-            </div>
-          </div>
-        </li>
-        <li class="category">
-          <a href="#">Livros</a>
-          <div class="subcategories">
-            <div class="column">
-              <h4>Gênero</h4>
-              <a href="#">Ficção</a>
-              <a href="#">Não-Ficção</a>
-            </div>
-            <div class="column">
-              <h4>Infantil</h4>
-              <a href="#">Contos</a>
-              <a href="#">Educacionais</a>
-            </div>
-            <div class="column">
-              <h4>Outros</h4>
-              <a href="#">Biografias</a>
-              <a href="#">Autoajuda</a>
-            </div>
-          </div>
-        </li>
-        <li class="category">
-          <a href="#">Papelaria</a>
-          <div class="subcategories">
-            <div class="column">
-              <h4>Escritório</h4>
-              <a href="#">Canetas</a>
-              <a href="#">Papéis</a>
-            </div>
-            <div class="column">
-              <h4>Escolar</h4>
-              <a href="#">Mochilas</a>
-              <a href="#">Cadernos</a>
-            </div>
-            <div class="column">
-              <h4>Artes</h4>
-              <a href="#">Tinta</a>
-              <a href="#">Pincéis</a>
-            </div>
-          </div>
-        </li>
-        <li class="category">
-          <a href="#">Pet Shop</a>
-          <div class="subcategories">
-            <div class="column">
-              <h4>Cães</h4>
-              <a href="#">Rações</a>
-              <a href="#">Brinquedos</a>
-            </div>
-            <div class="column">
-              <h4>Gatos</h4>
-              <a href="#">Rações</a>
-              <a href="#">Arranhadores</a>
-            </div>
-            <div class="column">
-              <h4>Acessórios</h4>
-              <a href="#">Camas</a>
-              <a href="#">Guias</a>
-            </div>
-          </div>
-        </li>
-        <li class="category">
-          <a href="#">Jardinagem</a>
-          <div class="subcategories">
-            <div class="column">
-              <h4>Plantas</h4>
-              <a href="#">Flores</a>
-              <a href="#">Folhagens</a>
-            </div>
-            <div class="column">
-              <h4>Ferramentas</h4>
-              <a href="#">Pás</a>
-              <a href="#">Tesouras</a>
-            </div>
-            <div class="column">
-              <h4>Outros</h4>
-              <a href="#">Adubos</a>
-              <a href="#">Vasos</a>
-            </div>
-          </div>
-        </li>
-        <li class="category">
-          <a href="#">Ferramentas</a>
-          <div class="subcategories">
-            <div class="column">
-              <h4>Manuais</h4>
-              <a href="#">Chaves</a>
-              <a href="#">Martelos</a>
-            </div>
-            <div class="column">
-              <h4>Elétricas</h4>
-              <a href="#">Furadeiras</a>
-              <a href="#">Serras</a>
-            </div>
-            <div class="column">
-              <h4>Acessórios</h4>
-              <a href="#">Parafusos</a>
-              <a href="#">Pregos</a>
-            </div>
-          </div>
-        </li>
+      @endforeach
       </ul>
     </div>
     
