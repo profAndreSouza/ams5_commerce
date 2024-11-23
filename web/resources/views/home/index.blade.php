@@ -12,13 +12,13 @@
       <ul>
       @foreach ($categories as $category)
         <li class="category">
-          <a href="{{ route('product.category', $category->slug) }}">{{ $category->name }}</a>
+          <a href="{{ route('categories.show', $category->slug) }}">{{ $category->name }}</a>
           <div class="subcategories">
           @foreach ($category->children as $subCategory)
             <div class="column">
               <h4>{{ $subCategory->name }}</h4>
             @foreach ($subCategory->children as $subCategoryLvl2)
-              <a href="{{ route('product.category', $subCategoryLvl2->slug) }}">{{ $subCategoryLvl2->name }}</a>
+              <a href="{{ route('categories.show', $subCategoryLvl2->slug) }}">{{ $subCategoryLvl2->name }}</a>
             @endforeach
             </div>
           @endforeach

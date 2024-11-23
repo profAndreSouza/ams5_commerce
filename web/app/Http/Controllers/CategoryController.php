@@ -60,9 +60,12 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        $category = Category::with('parent')->where("slug", "=", $slug)->first();
+        $categories = $this->parentCategories($category);
+
+        return view('category.index', compact('categories'));
     }
 
     /**
@@ -119,118 +122,27 @@ class CategoryController extends Controller
         return redirect()->route('categories.index');
     }
 
-    public function resetCategoriesTable()
-    {
-        DB::table('categories')->truncate();
 
-        $categories = [
-            [
-                'name' => 'Roupa',
-                'subcategories' => [
-                    'Feminino' => ['Vestidos', 'Camisetas', 'Calças'],
-                    'Masculino' => ['Camisetas', 'Calças', 'Shorts'],
-                    'Infantil' => ['Camisetas', 'Calças', 'Inverno'],
-                ],
-            ],
-            [
-                'name' => 'Eletrônico',
-                'subcategories' => [
-                    'Celulares' => ['Smartphones', 'Acessórios'],
-                    'Computadores' => ['Laptops', 'Desktops'],
-                    'Acessórios' => ['Fones de ouvido', 'Carregadores'],
-                ],
-            ],
-            [
-                'name' => 'Esportes',
-                'subcategories' => [
-                    'Equipamentos' => ['Bolas', 'Raquetes'],
-                    'Roupas' => ['Camisetas', 'Shorts'],
-                    'Calçados' => ['Tênis', 'Chuteiras'],
-                ],
-            ],
-            [
-                'name' => 'Beleza',
-                'subcategories' => [
-                    'Maquiagem' => ['Batons', 'Sombras'],
-                    'Cabelos' => ['Shampoos', 'Condicionadores'],
-                    'Pele' => ['Cremes', 'Protetores Solares'],
-                ],
-            ],
-            [
-                'name' => 'Brinquedos',
-                'subcategories' => [
-                    'Idade' => ['0-2 anos', '3-5 anos'],
-                    'Tipo' => ['Educativos', 'Peluche'],
-                    'Outros' => ['Jogos', 'Puzzles'],
-                ],
-            ],
-            [
-                'name' => 'Livros',
-                'subcategories' => [
-                    'Gênero' => ['Ficção', 'Não-Ficção'],
-                    'Infantil' => ['Contos', 'Educacionais'],
-                    'Outros' => ['Biografias', 'Autoajuda'],
-                ],
-            ],
-            [
-                'name' => 'Papelaria',
-                'subcategories' => [
-                    'Escritório' => ['Canetas', 'Papéis'],
-                    'Escolar' => ['Mochilas', 'Cadernos'],
-                    'Artes' => ['Tinta', 'Pincéis'],
-                ],
-            ],
-            [
-                'name' => 'Pet Shop',
-                'subcategories' => [
-                    'Cães' => ['Rações', 'Brinquedos'],
-                    'Gatos' => ['Rações', 'Arranhadores'],
-                    'Acessórios' => ['Camas', 'Guias'],
-                ],
-            ],
-            [
-                'name' => 'Jardinagem',
-                'subcategories' => [
-                    'Plantas' => ['Flores', 'Folhagens'],
-                    'Ferramentas' => ['Pás', 'Tesouras'],
-                    'Outros' => ['Adubos', 'Vasos'],
-                ],
-            ],
-            [
-                'name' => 'Ferramentas',
-                'subcategories' => [
-                    'Manuais' => ['Chaves', 'Martelos'],
-                    'Elétricas' => ['Furadeiras', 'Serras'],
-                    'Acessórios' => ['Parafusos', 'Pregos'],
-                ],
-            ],
-        ];
+    private function parentCategories($category) {
+        if (!$category)
+            return null;
         
+        $parent = $this->parentCategories($category->parent);
+        
+        return array_merge(
+            $parent ?? [],
+            [
+                [
+                    'id' => $category->id,
+                    'name' => $category->name,
+                    'slug' => $category->slug
+                ]
+            ]
+        );
 
-        foreach ($categories as $categoryData) {
-            $category = Category::create([
-                'name' => $categoryData['name'],
-                'slug' => Str::slug($categoryData['name']),
-                'parent' => null
-            ]);
-
-            foreach ($categoryData['subcategories'] as $subcategoryName => $subItems) {
-                $subcategory = Category::create([
-                    'name' => $subcategoryName,
-                    'slug' => Str::slug($category->name . " " . $subcategoryName),
-                    'parent_id' => $category->id,
-                ]);
-
-                foreach ($subItems as $itemName) {
-                    Category::create([
-                        'name' => $itemName,
-                        'slug' => Str::slug($itemName . " " . $subcategory->name),
-                        'parent_id' => $subcategory->id,
-                    ]);
-                }
-            }
-        }
-
-        return "ok";
+        
     }
+
+
+
 }
