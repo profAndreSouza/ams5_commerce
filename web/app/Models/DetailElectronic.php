@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class EletronicDetails extends Model
+class DetailElectronic extends Model
 {
     use HasFactory;
 
@@ -16,4 +16,9 @@ class EletronicDetails extends Model
         'other',
         'manufacturer'
     ];
+
+    public function product()
+    {
+        return $this->morphOne(Product::class, 'detailed');
+    }
 }

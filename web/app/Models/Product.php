@@ -16,4 +16,17 @@ class Product extends Model
         'quantity',
         'image'
     ];
+
+    public function characteristics() {
+        return $this->hasMany(Characteristic::class);
+    }
+
+    public function detail() {
+        return $this->morphTo();
+    }
+
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class);
+    }
 }
