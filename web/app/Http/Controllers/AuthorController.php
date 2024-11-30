@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Author;
 
 class AuthorController extends Controller
 {
@@ -13,7 +14,8 @@ class AuthorController extends Controller
      */
     public function index()
     {
-        //
+        $authors = Author::all();
+        return response()->json($authors);
     }
 
     /**
@@ -34,7 +36,13 @@ class AuthorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'biography' => 'nullable|string',
+        ]);
+
+        $author = Author::create($validated);
+        return response()->json($author, 201);
     }
 
     /**
@@ -45,7 +53,8 @@ class AuthorController extends Controller
      */
     public function show($id)
     {
-        //
+        $author = Author::findOrFail($id);
+        return response()->json($author);
     }
 
     /**
@@ -68,7 +77,14 @@ class AuthorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'biography' => 'nullable|string',
+        ]);
+
+        $author = Author::findOrFail($id);
+        $author->update($validated);
+        return response()->json($author);
     }
 
     /**
@@ -79,6 +95,8 @@ class AuthorController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $author = Author::findOrFail($id);
+        $author->delete();
+        return response()->json(['message' => 'Author deleted successfully.']);
     }
 }
